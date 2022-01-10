@@ -14,8 +14,14 @@
   background: #f2f3f7;
   border-radius: 12px;
 }
-.col-for-name, .col-for-Lname, .col-email, .col-password, .col-confirm-password{
-  font-size: 22px;
-  padding: 12px 0;
+.col-for-name, .col-for-Lname, .Email, .Password, .cnf-password, .confirm-password-box, .password-box, .email-box{
+  font-size: 18px;
+  padding: 8px 0;
   /* border: 1px solid rgb(0, 0, 0); */
+}
+.submit-btn-div{
+  text-align: center;
+}
+.submit-btn{
+  padding: 4px 18px;
 }
