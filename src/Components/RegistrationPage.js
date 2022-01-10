@@ -3,15 +3,15 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 const RegistrationPage = () => {
     return (
         <>
-         <div className='background-main-div '>
+         <div id='background-main' className='background-main-div '>
               
 
              
          <Container className='body-container justify-content-center '>
                 <h3 className='register-heading text-center'>Register Form</h3>
-                <p>Create your account. It's free and only takes a minute.</p>
+                <p className='text-center'>Create your account. It's free and only takes a minute.</p>
                             
-            <Row>
+            <Row className='name'>
                 <Col className='col-sm-12 col-md-6 col-lg-6 col-for-name'>
                 <input placeholder='Name '/>
                 </Col>
