@@ -27,38 +27,45 @@ const RegistrationPage = () => {
     setError(Validate(formValues));
     setisSubmit(true);
   };
+  
   useEffect(() => {
     console.log("use rffect");
     if (Object.keys(formError).length === 0 && isSubmit) {
-      console.log(formValues);
+      // console.log(formValues);
     }
-  }, [formError]); 
+  }, ); 
 
-  const Validate = (values) => {
+  const Validate = (value) => {
     const errors = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if (!values.username) {
+    
+    if (!value.username) {
       errors.username = "Username required!";
+    } else if (!value.username.length < 3){
+      errors.username = 'Please enter the valid user name '
     }
-    if (!values.email) {
+     
+    if (!value.email) {
       errors.email = "email required!";
-    } else if (!regex.test(values.email)) {
+    } else if (!regex.test(value.email)) {
       errors.email = "this is not a validate email format";
     }
-    if (!values.password) {
-      errors.username = "Username required!";
-    } else if (values.password < 4) {
-      errors.email = "this is not a validate password";
-    } else if (values.password > 10) {
-      errors.email = "this is not a validate password";
+
+    if (!value.password) {
+      errors.password = "Password is required!";
     }
-    if (!values.cnfpassword) {
-        errors.username = "Username required!";
-      } else if (values.cnfpassword < 4) {
-        errors.email = "this is not a validate password";
-      } else if (values.cnfpassword > 10) {
-        errors.email = "this is not a validate password";
-      }
+     else if (value.password < 4) {
+      errors.password = "this is not a validate password";
+    } else if (value.password > 8) {
+      errors.password = "Password should write in 8 digit";
+    }
+
+    if (!value.cnfpassword === !value.password) {
+        errors.cnfpassword = "Confirm password not matched!";
+      } else if (value.cnfpassword < 4 ) {
+        errors.password = " Your Password is not valid";
+    }
+
     return errors;
   };
   return (

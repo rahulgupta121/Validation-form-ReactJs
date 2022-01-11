@@ -25,3 +25,8 @@
 .submit-btn{
   padding: 4px 18px;
 }
+pre {
+  display: none !important;
+  font-size: 87.5%;
+  color: #212529;
+}
