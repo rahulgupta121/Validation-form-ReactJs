@@ -41,7 +41,7 @@ const RegistrationPage = () => {
     
     if (!value.username) {
       errors.username = "Username required!";
-    } else if (!value.username.length < 3){
+    } else if (!value.username.length > 4){
       errors.username = 'Please enter the valid user name '
     }
      
@@ -60,11 +60,11 @@ const RegistrationPage = () => {
       errors.password = "Password should write in 8 digit";
     }
 
-    if (!value.cnfpassword === !value.password) {
-        errors.cnfpassword = "Confirm password not matched!";
-      } else if (value.cnfpassword < 4 ) {
-        errors.password = " Your Password is not valid";
-    }
+    // if (!value.cnfpassword === !value.password) {
+    //     errors.cnfpassword = "Confirm password not matched!";
+    //   } else if (value.cnfpassword < 4 ) {
+    //     errors.password = " Your Password is not valid";
+    // }
 
     return errors;
   };
@@ -142,7 +142,7 @@ const RegistrationPage = () => {
               />
             </div>
             <p>{formError.password}</p>
-            <div className="field">
+            {/* <div className="field">
               <label className="label-name cnf-password">
                 {" "}
                 Confirm Password{" "}
@@ -157,7 +157,7 @@ const RegistrationPage = () => {
                 onChange={handleChange}
               />
             </div>
-            <p>{formError.cnfpassword}</p>
+            <p>{formError.cnfpassword}</p> */}
             <div className="submit-btn-div mt-3">
               <Button className="submit-btn pl-5 pr-5 mb-3" variant="primary" onClick={handleSubmit}>
                 Submit
